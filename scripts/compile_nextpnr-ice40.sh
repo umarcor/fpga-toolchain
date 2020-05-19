@@ -4,7 +4,7 @@
 set -e
 
 nextpnr_dir=nextpnr-ice40
-nextpnr_commit=master
+nextpnr_commit=371d33146fcfda9a1c568f46fd1f5775cd4fb1be
 nextpnr_uri=https://github.com/YosysHQ/nextpnr.git
 
 # -- Setup

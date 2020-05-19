@@ -4,7 +4,7 @@
 set -e
 
 ICESTORM=icestorm
-COMMIT=master
+COMMIT=cfac9f950412ae139fa3c085c21881cbaf24822f
 GIT_ICESTORM=https://github.com/cliffordwolf/icestorm.git
 
 cd $UPSTREAM_DIR

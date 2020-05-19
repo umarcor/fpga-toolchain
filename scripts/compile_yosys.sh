@@ -5,7 +5,7 @@ set -e
 
 REL=0 # 1: load from release tag. 0: load from source code
 
-VER=master
+VER=84982b308343315c889d3d00116db820a51cad78
 YOSYS=yosys
 GIT_YOSYS=https://github.com/YosysHQ/yosys.git
 
@@ -36,12 +36,13 @@ rsync -a $YOSYS $BUILD_DIR --exclude .git
 
 cd $BUILD_DIR/$YOSYS
 # TODO contribute updated patch upstream as it has gone stale
-patch < $WORK_DIR/scripts/yosys-ghdl.diff
+# patch < $WORK_DIR/scripts/yosys-ghdl.diff
 
-mkdir -p frontends/ghdl
-cp -R ../$ghdl_yosys_plugin/src/* frontends/ghdl
-MAKEFILE_CONF_GHDL=$'ENABLE_GHDL := 1\n'
-MAKEFILE_CONF_GHDL+="GHDL_DIR := $PACKAGE_DIR/$NAME"
+# mkdir -p frontends/ghdl
+# cp -R ../$ghdl_yosys_plugin/src/* frontends/ghdl
+# MAKEFILE_CONF_GHDL=$'ENABLE_GHDL := 1\n'
+# MAKEFILE_CONF_GHDL+="GHDL_DIR := $PACKAGE_DIR/$NAME"
+MAKEFILE_CONF_GHDL=""
 
 # -- Compile it
 if [ $ARCH == "darwin" ]; then
