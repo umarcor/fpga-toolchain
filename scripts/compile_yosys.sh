@@ -52,6 +52,8 @@ if [ $ARCH == "darwin" ]; then
     $MAKE config-clang
     echo "$MAKEFILE_CONF_GHDL" >> Makefile.conf
     sed -i "" "s/-Wall -Wextra -ggdb/-w/;" Makefile
+    sed -i "" "s:berkeley-abc/abc:YosysHQ/abc:;" Makefile
+    sed -i "" "s:623b5e8:master:;" Makefile
     CXXFLAGS="-std=c++11 $CXXFLAGS" make \
             -j$J YOSYS_VER="$VER (open-tool-forge build)" PRETTY=0 \
             LDLIBS="-lm" \
@@ -63,6 +65,8 @@ if [ $ARCH == "darwin" ]; then
 elif [ ${ARCH:0:7} == "windows" ]; then
     $MAKE config-msys2-64
     echo "$MAKEFILE_CONF_GHDL" >> Makefile.conf
+    sed -i "s:berkeley-abc/abc:YosysHQ/abc:;" Makefile
+    sed -i "s:623b5e8:master:;" Makefile
     $MAKE -j$J YOSYS_VER="$VER (open-tool-forge build)" PRETTY=0 \
               LDLIBS="-static -lstdc++ -lm" \
               ABCMKARGS="CC=\"$CC\" CXX=\"$CXX\" LIBS=\"-static -lm\" OPTFLAGS=\"-O\" \
@@ -76,6 +80,8 @@ else
     $MAKE config-gcc
     echo "$MAKEFILE_CONF_GHDL" >> Makefile.conf
     sed -i "s/-Wall -Wextra -ggdb/-w/;" Makefile
+    sed -i "s:berkeley-abc/abc:YosysHQ/abc:;" Makefile
+    sed -i "s:623b5e8:master:;" Makefile
     # sed -i "s/LD = gcc$/LD = $CC/;" Makefile
     # sed -i "s/CXX = gcc$/CXX = $CC/;" Makefile
     # sed -i "s/LDFLAGS += -rdynamic/LDFLAGS +=/;" Makefile
