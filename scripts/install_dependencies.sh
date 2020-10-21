@@ -64,7 +64,7 @@ if [ $ARCH == "windows_x86" ]; then
 #   this was used to cross-compile nextpnr-ecp5 for Windows but we can't build native python libs
 #   for Windows with MinGW (CPython on Windows is built with MSVC) and the built python libs are run as part
 #   of the build process
-# 
+#
 #   sudo apt-get install -y build-essential bison flex libreadline-dev \
 #                           gawk tcl-dev libffi-dev git mercurial graphviz \
 #                           xdot pkg-config python3.5-dev qt5-default libqt5opengl5-dev $BOOST \
@@ -81,12 +81,12 @@ if [ $ARCH == "windows_x86" ]; then
 fi
 
 if [ $ARCH == "windows_amd64" ]; then
-    pacman --noconfirm --needed -S git base-devel mingw-w64-x86_64-toolchain mingw-w64-x86_64-cmake \
-    mingw-w64-x86_64-boost mingw-w64-x86_64-eigen3 rsync unzip zip mingw-w64-x86_64-libftdi bison flex \
-    mingw-w64-x86_64-gcc-ada p7zip mingw-w64-x86_64-jsoncpp
+    pacman --noconfirm --needed -S git base-devel mingw-w64-i686-toolchain mingw-w64-i686-cmake \
+    mingw-w64-i686-boost mingw-w64-i686-eigen3 rsync unzip zip mingw-w64-i686-libftdi bison flex \
+    mingw-w64-i686-gcc-ada p7zip mingw-w64-i686-jsoncpp
 
-    x86_64-w64-mingw32-gcc --version
-    x86_64-w64-mingw32-g++ --version
+    #x86_64-w64-mingw32-gcc --version
+    #x86_64-w64-mingw32-g++ --version
 fi
 
 if [ $ARCH == "darwin" ]; then

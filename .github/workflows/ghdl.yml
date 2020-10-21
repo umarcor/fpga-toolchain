@@ -18,9 +18,9 @@ jobs:
 
     - uses: msys2/setup-msys2@v2
       with:
-        msystem: MINGW64
+        msystem: MINGW32
         update: true
-        install: base-devel git zlib-devel mingw-w64-x86_64-toolchain mingw-w64-x86_64-clang mingw-w64-x86_64-gcc-ada
+        install: base-devel git zlib-devel mingw-w64-i686-toolchain mingw-w64-i686-clang mingw-w64-i686-gcc-ada
 
     - run: git config --global core.autocrlf input
       shell: bash
