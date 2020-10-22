@@ -1,0 +1,30 @@
+name: 'ghdl'
+
+on:
+  push:
+  pull_request:
+
+env:
+  CI: true
+
+jobs:
+
+  win:
+    runs-on: windows-latest
+    defaults:
+        run:
+          shell: msys2 {0}
+    steps:
+
+    - uses: msys2/setup-msys2@v2
+      with:
+        msystem: MINGW64
+        update: true
+        install: base-devel git zlib-devel mingw-w64-x86_64-toolchain mingw-w64-x86_64-clang mingw-w64-x86_64-gcc-ada
+
+    - run: git config --global core.autocrlf input
+      shell: bash
+
+    - uses: actions/checkout@v2
+
+    - run: ./build.sh windows_amd64

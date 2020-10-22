@@ -36,6 +36,10 @@ fi
 
 test_bin $PACKAGE_DIR/$NAME/bin/ghdl$exe
 
+"$PACKAGE_DIR/$NAME/bin/ghdl$exe" --version
+
+GHDL="$PACKAGE_DIR/$NAME/bin/ghdl$exe" ./testsuite/testsuite.sh
+
 strip_binaries bin/ghdl$EXE
 
 clean_build $dir_name
