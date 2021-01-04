@@ -25,31 +25,31 @@ INSTALL_DEPS="${INSTALL_DEPS:-1}"
 CLEAN_AFTER_BUILD="${CLEAN_AFTER_BUILD:-1}"
 
 # Enable each individual tool
-COMPILE_DFU_UTIL="${COMPILE_DFU_UTIL:-1}"
+COMPILE_DFU_UTIL="${COMPILE_DFU_UTIL:-0}"
 COMPILE_YOSYS="${COMPILE_YOSYS:-1}"
-COMPILE_SBY="${COMPILE_SBY:-1}"
-COMPILE_ICESTORM="${COMPILE_ICESTORM:-1}"
-COMPILE_NEXTPNR_ICE40="${COMPILE_NEXTPNR_ICE40:-1}"
+COMPILE_SBY="${COMPILE_SBY:-0}"
+COMPILE_ICESTORM="${COMPILE_ICESTORM:-0}"
+COMPILE_NEXTPNR_ICE40="${COMPILE_NEXTPNR_ICE40:-0}"
 COMPILE_NEXTPNR_ECP5="${COMPILE_NEXTPNR_ECP5:-0}"
-COMPILE_ECPPROG="${COMPILE_ECPPROG:-1}"
-COMPILE_OPENFPGALOADER="${COMPILE_OPENFPGALOADER:-1}"
+COMPILE_ECPPROG="${COMPILE_ECPPROG:-0}"
+COMPILE_OPENFPGALOADER="${COMPILE_OPENFPGALOADER:-0}"
 COMPILE_IVERILOG="${COMPILE_IVERILOG:-0}"
 COMPILE_GHDL="${COMPILE_GHDL:-1}"
-COMPILE_Z3="${COMPILE_Z3:-1}"
-COMPILE_BOOLECTOR="${COMPILE_BOOLECTOR:-1}"
+COMPILE_Z3="${COMPILE_Z3:-0}"
+COMPILE_BOOLECTOR="${COMPILE_BOOLECTOR:-0}"
 COMPILE_AVY="${COMPILE_AVY:-0}" # deliberately disabled - does not yet work
-COMPILE_YICES2="${COMPILE_YICES2:-1}"
+COMPILE_YICES2="${COMPILE_YICES2:-0}"
 
 # Required for nextpnr's embedded interpreter to work
 # also required for symbiyosys on windows.
 # May be disabled during dev to speed things up
-BUNDLE_PYTHON="${BUNDLE_PYTHON:-1}"
+BUNDLE_PYTHON="${BUNDLE_PYTHON:-0}"
 
 # Only affects windows builds - a make.exe is
 # included for convenience
 # (existing Makefiles using unix utils generally need
 # to be adjusted to work with this)
-BUNDLE_MAKE="${BUNDLE_MAKE:-1}"
+BUNDLE_MAKE="${BUNDLE_MAKE:-0}"
 
 # Enable to compress the resulting build into a package.
 # May be disabled during dev to speed things up.
