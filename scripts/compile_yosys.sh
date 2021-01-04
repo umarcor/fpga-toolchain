@@ -39,7 +39,7 @@ then
         GHDL_LDLIBS="$PACKAGE_DIR/$NAME/lib/libghdl.a $(tr -s '\n' ' ' < $PACKAGE_DIR/$NAME/lib/libghdl.link)"
     fi
 
-    echo "$GHDL_LIBS"
+    echo "$GHDL_LDLIBS"
     echo "$PACKAGE_DIR/$NAME/lib/libghdl.link"
     cat "$PACKAGE_DIR/$NAME/lib/libghdl.link"
     exit 1
