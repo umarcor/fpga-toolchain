@@ -32,7 +32,9 @@ then
     if [ $ARCH == "darwin" ]; then
         GHDL_LDLIBS="$PACKAGE_DIR/$NAME/lib/libghdl.a $(tr -s '\n' ' ' < $PACKAGE_DIR/$NAME/lib/libghdl.link)"
     elif [ ${ARCH:0:7} == "windows" ]; then
+        echo 'WINDOWS!!!'
         GHDL_LDLIBS="$(cygpath -m -a $PACKAGE_DIR/$NAME/lib/libghdl.a) $(cat $PACKAGE_DIR/$NAME/lib/libghdl.link | tr -s '\n' ' ' | tr -s '\\' '/' )"
+        #sed -i -e 's@.*\(/mingw.*\)@\1@' "${_lib}"/libghdl.link
     else
         GHDL_LDLIBS="$PACKAGE_DIR/$NAME/lib/libghdl.a $(tr -s '\n' ' ' < $PACKAGE_DIR/$NAME/lib/libghdl.link)"
     fi
